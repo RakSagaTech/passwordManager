@@ -1,12 +1,15 @@
 import './index.css'
 
 const PasswordItem = props => {
-  const {passwordDetails, colorsList} = props
-  const {id, websiteInput, usernameInput, passwordInput} = passwordDetails
-  const firstCharacter = websiteInput[0].toUpperCase()
+  const {passwordDetails, showPasswords, deletePassword} = props
+  const {id, website, username, password, backgroundColor} = passwordDetails
+  const firstCharacter = website[0].toUpperCase()
 
-  const randomIndex = Math.floor(Math.random() * colorsList.length)
-  const backgroundColor = colorsList[randomIndex]
+  const onClickDelete = () => {
+    deletePassword(id)
+  }
+
+  const altText = showPasswords ? 'Password shown as text' : 'Stars'
 
   return (
     <li className="password-item">
@@ -15,13 +18,21 @@ const PasswordItem = props => {
           <h1 className="first-char"> {firstCharacter} </h1>
         </div>
         <div className="password-details-container">
-          <p className="input-details">{websiteInput}</p>
-          <p className="input-details">{usernameInput}</p>
-          <p className="input-details">{passwordInput}</p>
+          <p className="input-details">{website}</p>
+          <p className="input-details">{username}</p>
+          {showPasswords ? (
+            <p className="input-details">{password}</p>
+          ) : (
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/password-manager-stars-img.png"
+              alt={altText}
+              className="stars"
+            />
+          )}
         </div>
       </div>
 
-      <button type="button" className="delete-btn">
+      <button type="button" className="delete-btn" onClick={onClickDelete}  data-testid="delete">
         <img
           src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
           alt="delete"
