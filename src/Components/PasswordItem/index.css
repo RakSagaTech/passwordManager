@@ -1,0 +1,75 @@
+.password-item {
+  list-style-type: none;
+  width: 100%;
+  border: 2px solid #7683cb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .password-item {
+    width: 280px;
+    padding: 20px 12px;
+  }
+}
+
+.first-char-password-details-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.first-char-container {
+  border-radius: 100%;
+  width: 54px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.first-char {
+  font-size: 24px;
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.password-details-container {
+  width: 100%;
+}
+
+.input-details {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px;
+}
+
+.stars {
+  width: 100%;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.delete-img {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .delete-img {
+    width: 24px;
+    height: 24px;
+  }
+}
